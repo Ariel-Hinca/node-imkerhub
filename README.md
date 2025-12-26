@@ -11,4 +11,4 @@ Dit is mijn Node.js + Express + MongoDB API voor het vak Back End.
 
 ## Bronvermeldingen
 - Mongoose connectie gebaseerd op de officiële documentatie: https://mongoosejs.com/docs/connections.html
-
+- Mongoose Documentation – Schemas: https://mongoosejs.com/docs/guide.html
