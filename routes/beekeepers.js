@@ -16,4 +16,15 @@ router.get("/", async (req, res) => {
     res.json(beekeepers);
 });
 
+// Eén imker ophalen op ID
+router.get("/:id", async (req, res) => {
+    const beekeeper = await Beekeeper.findById(req.params.id);
+
+    if (!beekeeper) {
+      return res.statusjson({ error: "Imker niet gevonden" });
+    }
+
+    res.json(beekeeper);
+});
+
 export default router;
