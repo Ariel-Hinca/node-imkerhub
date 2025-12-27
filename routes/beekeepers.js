@@ -27,4 +27,15 @@ router.get("/:id", async (req, res) => {
     res.json(beekeeper);
 });
 
+// Imker verwijderen op ID
+router.delete("/:id", async (req, res) => {
+    const deletedBeekeeper = await Beekeeper.findByIdAndDelete(req.params.id);
+
+    if (!deletedBeekeeper) {
+      return res.json({ error: "Imker niet gevonden" });
+    }
+
+    res.json({ message: "Imker succesvol verwijderd" });
+});
+
 export default router;
