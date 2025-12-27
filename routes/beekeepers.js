@@ -34,6 +34,4 @@ router.put("/:id", (req, res) => {
     .then(result => res.json(result));
 });
 
-
-
 export default router;
