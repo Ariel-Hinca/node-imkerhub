@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>ImkerHub API</title>
+    <link rel="stylesheet" link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap">
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+</style>
+</head>
+<body>
+    <h1>ImkerHub API</h1>
+    <p>Welkom bij de ImkerHub API. Hieronder vind je een overzicht van alle beschikbare endpoints.</p>
+
+    <h2>Beekeepers</h2>
+    <ul>
+        <li><strong>POST /beekeepers</strong> – nieuwe imker toevoegen</li>
+        <li><strong>GET /beekeepers</strong> – alle imkers ophalen</li>
+        <li><strong>GET /beekeepers?limit=10&offset=0</strong> – pagination</li>
+        <li><strong>GET /beekeepers/search?name=Juan</strong> – zoeken op naam</li>
+        <li><strong>GET /beekeepers/:id</strong> – één imker ophalen</li>
+        <li><strong>PUT /beekeepers/:id</strong> – imker updaten</li>
+        <li><strong>DELETE /beekeepers/:id</strong> – imker verwijderen</li>
+    </ul>
+
+    <h2>Products</h2>
+    <ul>
+        <li><strong>POST /products</strong> – nieuw product toevoegen</li>
+        <li><strong>GET /products</strong> – alle producten ophalen</li>
+        <li><strong>GET /products?limit=10&offset=0</strong> – pagination</li>
+        <li><strong>GET /products/search?name=honing</strong> – zoeken op naam</li>
+        <li><strong>GET /products/:id</strong> – één product ophalen</li>
+        <li><strong>PUT /products/:id</strong> – product updaten</li>
+        <li><strong>DELETE /products/:id</strong> – product verwijderen</li>
+    </ul>
+
+    <h2>Extra informatie</h2>
+    <p>Deze API gebruikt een lokale MongoDB‑database op <i>mongodb://localhost:27017/imkerhub</i>.</p>
+</body>
+</html>
