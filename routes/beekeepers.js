@@ -10,9 +10,12 @@ router.post("/", async (req, res) => {
     res.json(savedBeekeeper);
 });
 
-// Alle imkers ophalen uit de DB
+// Alle imkers ophalen uit de DB, met limit en offset
 router.get("/", async (req, res) => {
-    const beekeepers = await Beekeeper.find();
+   const limit = parseInt(req.query.limit) || 0; 
+   const offset = parseInt(req.query.offset) || 0; 
+
+    const beekeepers = await Beekeeper.find().limit(limit).skip(offset);
     res.json(beekeepers);
 });
 

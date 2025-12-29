@@ -69,3 +69,7 @@ Postman werd gebruikt om te controleren of alle routes correct functioneren en d
 
 - De algemene projectstructuur (models, routes, controllers) is geïnspireerd door deze gids:
   https://dev.to/harshm03/full-featured-expressjs-project-inspired-by-laravels-mvc-structure-al0
+
+- Het gebruik van limit() en skip() voor pagination is gebaseerd op de officiële Mongoose documentatie:
+  https://mongoosejs.com/docs/api/query.html#Query.prototype.limit()
+  https://mongoosejs.com/docs/api/query.html#Query.prototype.skip()
