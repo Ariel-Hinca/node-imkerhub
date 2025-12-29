@@ -5,7 +5,10 @@ const router = express.Router();
 
 // GET alle producten
 router.get("/", async (req, res) => {
-    const products = await Product.find();
+    const limit = parseInt(req.query.limit) || 0; 
+    const offset = parseInt(req.query.offset) || 0;
+
+    const products = await Product.find().limit(limit).skip(offset);
     res.json(products);
 });
 
