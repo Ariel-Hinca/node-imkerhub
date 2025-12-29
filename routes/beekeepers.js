@@ -29,9 +29,13 @@ router.delete("/:id", async (req, res) => {
 });
 
 // Imker updaten op ID
-router.put("/:id", (req, res) => {
-  Beekeeper.findByIdAndUpdate(req.params.id, req.body, { new: true })
-    .then(result => res.json(result));
+router.put("/:id", async (req, res) => {
+    const updatedBeekeeper = await Beekeeper.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    res.json(updatedBeekeeper);
 });
 
 export default router;
