@@ -19,6 +19,13 @@ router.get("/", async (req, res) => {
     res.json(beekeepers);
 });
 
+// Zoeken op naam
+router.get("/search", async (req, res) => {
+    const name = req.query.name;
+    const beekeepers = await Beekeeper.find({ name: new RegExp(name, "i") });
+    res.json(beekeepers);
+});
+
 // Eén imker ophalen op ID
 router.get("/:id", async (req, res) => {
     const beekeeper = await Beekeeper.findById(req.params.id);

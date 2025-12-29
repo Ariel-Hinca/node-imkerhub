@@ -73,3 +73,6 @@ Postman werd gebruikt om te controleren of alle routes correct functioneren en d
 - Het gebruik van limit() en skip() voor pagination is gebaseerd op de officiële Mongoose documentatie:
   https://mongoosejs.com/docs/api/query.html#Query.prototype.limit()
   https://mongoosejs.com/docs/api/query.html#Query.prototype.skip()
+
+- Het gebruik van RegExp voor "contains" type zoekopdrachten, de officiële Mongoose documentatie:
+  https://mongoosejs.com/docs/api/query.html#Query.prototype.regex()

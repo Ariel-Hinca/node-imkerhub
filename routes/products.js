@@ -12,6 +12,13 @@ router.get("/", async (req, res) => {
     res.json(products);
 });
 
+// Zoeken op productnaam
+router.get("/search", async (req, res) => {
+    const name = req.query.name;
+    const products = await Product.find({ name: new RegExp(name, "i") });
+    res.json(products);
+});
+
 // GET één product mbv id
 router.get("/:id", async (req, res) => {
     const product = await Product.findById(req.params.id);
