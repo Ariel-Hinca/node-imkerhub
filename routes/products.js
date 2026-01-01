@@ -27,6 +27,17 @@ router.get("/:id", async (req, res) => {
 
 // POST nieuw product
 router.post("/", async (req, res) => {
+    const { name, price, description } = req.body; 
+
+    // Check lege velden 
+    if (!name || !price || !description) { 
+        return res.json({ error: "Alle velden zijn verplicht." }); 
+    } 
+    // Check of price een cijfer is 
+    if (isNaN(price)) { 
+        return res.json({ error: "Prijs moet een nummer zijn." }); 
+    }
+    
     const product = new Product(req.body);
     const savedProduct = await product.save();
     res.json(savedProduct);
@@ -34,6 +45,12 @@ router.post("/", async (req, res) => {
 
 // PUT product updaten mbv id
 router.put("/:id", async (req, res) => {
+    const { name, price } = req.body; 
+    // Check of price een cijfer is 
+    if (price && isNaN(price)) { 
+        return res.json({ error: "Prijs moet een nummer zijn." }); 
+    }
+
     const updatedProduct = await Product.findByIdAndUpdate(
       req.params.id,
       req.body,
